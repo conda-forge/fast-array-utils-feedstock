@@ -1,5 +1,5 @@
 {% set name = "fast-array-utils" %}
-{% set version = "1.2" %}
+{% set version = "1.2.1" %}
 {% set python_min = "3.11" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/fast_array_utils-{{ version }}.tar.gz
-  sha256: 15bb57a38f60ef89207189fd10b8d6a65d6ce25a9c802cf5f1485498f7837c1d
+  sha256: 8d446ccb279c42b3eceb6f3daa8ac0232438a6b1593c9573182fbfb0e6e9e9d8
 
 build:
   noarch: python
