@@ -143,5 +143,6 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@flying-sheep](https://github.com/flying-sheep/)
 * [@mschilli87](https://github.com/mschilli87/)
 
