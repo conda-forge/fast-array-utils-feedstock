@@ -27,6 +27,9 @@ requirements:
   run:
     - python >={{ python_min }}
     - numpy >=1.25.2
+  run_constrained:
+    - numba >=0.57
+    - dask >=2023.5.1
 
 test:
   imports:
