@@ -27,6 +27,7 @@ requirements:
   run:
     - python >={{ python_min }}
     - numpy >=2
+    - array-api-compat
   run_constrained:
     - numba >=0.57
     - dask >=2023.6.1
