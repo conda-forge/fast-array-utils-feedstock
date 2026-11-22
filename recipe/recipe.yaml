@@ -1,0 +1,70 @@
+schema_version: 1
+
+context:
+  name: fast-array-utils
+  version: "1.5.1"
+  python_min: "3.12"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://files.pythonhosted.org/packages/source/${{ name[0] }}/${{ name }}/fast_array_utils-${{ version }}.tar.gz
+  sha256: f3059b6915043226377f4153d5ee1b56e3acf9e5ffec34b393d0bc2298a1e88d
+
+build:
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 0
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - hatch-docstring-description >=1.1.1
+    - hatch-fancy-pypi-readme
+    - hatch-min-requirements
+    - hatch-vcs
+    - hatchling
+    - pip
+  run:
+    - python >=${{ python_min }}
+    - numpy >=2
+    - array-api-compat
+  run_constraints:
+    - numba >=0.57
+    - dask >=2023.6.1
+    - scipy >=1.13
+  extras:
+    accel:
+      - numba >=0.57
+    dask:
+      - dask >=2023.6.1
+    sparse:
+      - scipy >=1.13
+    full:
+      - fast-array-utils[extras=[accel, dask, sparse]]
+      - h5py
+      - zarr
+    testing:
+      - packaging
+
+tests:
+  - python:
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
+      imports:
+        - fast_array_utils
+      pip_check: true
+
+about:
+  homepage: https://icb-fast-array-utils.readthedocs-hosted.com/
+  summary: Fast array utilities with minimal dependencies.
+  license: MPL-2.0
+  license_file: LICENSE.rst
+
+extra:
+  recipe-maintainers:
+    - mschilli87
+    - flying-sheep
