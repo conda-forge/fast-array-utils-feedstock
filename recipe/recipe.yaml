@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: fast-array-utils
-  version: "1.5.1"
+  version: "1.6.0"
   python_min: "3.12"
 
 package:
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/${{ name[0] }}/${{ name }}/fast_array_utils-${{ version }}.tar.gz
-  sha256: f3059b6915043226377f4153d5ee1b56e3acf9e5ffec34b393d0bc2298a1e88d
+  sha256: f6e8ec814fb5a0859b4d9930b4a40419235d2001ce6d0f2e8bc6d42874a4bf92
 
 build:
   noarch: python
